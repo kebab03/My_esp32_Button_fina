@@ -96,7 +96,7 @@
           window.alert("line 98 currentState:="+currentState);
           // Update the state text
           var h3Element = $('#state' + buttonIndex);
-          h3Element.text(button_labels[buttonIndex] + " is currently " + (currentState === 'on' ? "ON" : "OFF"));
+          h3Element.text(buttonLabels[buttonIndex] + " is currently " + (currentState === 'on' ? "ON" : "OFF"));
           //h3Element.text(button_labels[buttonIndex] + " is try currently " + currentState );
         },
         error: function(xhr, status, error) {

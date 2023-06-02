@@ -180,7 +180,8 @@ void sendButtonStateP(int buttonId, const char* state, const char* buttonLabel, 
 
 
   // Create a JSON payload with the button information
-  StaticJsonDocument<128> doc;
+ // StaticJsonDocument<128> doc;
+  StaticJsonDocument<256> doc;
   doc["buttonId"] = buttonId;
   doc["state"] = state;
   doc["buttonLabel"] = buttonLabel;

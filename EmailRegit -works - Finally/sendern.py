@@ -145,17 +145,12 @@ def update_state():
     return jsonify({'message': f'State updated for button {button_label}'})
 aved_button_id = None
 aved_button_label = None
-
-
-rin=1
-
+saved_button_Pin = []
+rin=0
 @app.route('/Pstate', methods=['GET', 'POST'])
 def Pupdate_state():
-    global aved_button_id, aved_button_label,Sbutton_data,button_data
-    global rin,saved_button_Pin
-    print(f"line   148  num_buttons",num_buttons)
-    saved_button_Pin = [2]*num_buttons
-    print(f"line   150  saved_button_Pin",saved_button_Pin)
+    global saved_button_Pin,aved_button_id, aved_button_label,Sbutton_data,button_data
+    global rin
     saved_button_label="default"
     saved_button_id=None
     Sbutton_data=[]
@@ -176,14 +171,14 @@ def Pupdate_state():
 
         #saved_button_Pin[button_id] = buttonPin
         #saved_button_Pin.append(buttonPin)  # Append buttonPin to the list
-        for u in range(num_buttons):
+        if len(saved_button_Pin) < num_buttons:
             
             print("Line 172 buttonPin dentro if ")
             print(f"buttonPin::",{buttonPin})
             #for rin in range(num_buttons):
-            print(f"rin:",rin)
-            saved_button_Pin[rin]=buttonPin
-            
+            print(f"rin:",{rin})
+            saved_button_Pin.append(buttonPin)
+            rin += 1
             
             #saved_button_Pin.append(buttonPin)  # Append buttonPin to the list
         
